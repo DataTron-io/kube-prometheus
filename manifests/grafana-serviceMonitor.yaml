@@ -2,7 +2,7 @@ apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
   name: grafana
-  namespace: monitoring
+  namespace: datatron
 spec:
   endpoints:
   - interval: 15s
