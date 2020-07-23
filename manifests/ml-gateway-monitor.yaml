@@ -1,0 +1,19 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  labels:
+    k8s-app: ml-gateway-monitor
+  name: ml-gateway-mon
+  namespace: datatron
+spec:
+  endpoints:
+  - bearerTokenFile: /var/run/secrets/kubernetes.io/serviceaccount/token
+    interval: 15s
+    port: 80
+  jobLabel: app
+  namespaceSelector:
+    matchNames:
+    - datatron
+  selector:
+    matchLabels:
+      app: ml-gateway
