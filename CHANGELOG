@@ -1,0 +1,7 @@
+Datatron v0.1
+
+-Created datatron.jsonnet to build manifests
+-Enable prometheus to scrap datatron namespace for metrics
+-Added service Monitor to scrap for infrastructure labels in datatron namespace
+-Updated kube-prometheus-node-ports mixin to only expose Grafana as NodePort 30000
+-Disabled creation of alertmanager yamls
