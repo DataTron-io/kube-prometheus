@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - env: []
-        image: datatron/grafana:6.6.0
+        image: grafana/grafana:6.6.0
         name: grafana
         ports:
         - containerPort: 3000
