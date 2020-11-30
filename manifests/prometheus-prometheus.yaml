@@ -6,12 +6,14 @@ metadata:
   name: k8s
   namespace: monitoring
 spec:
+  imagePullSecrets:
+    - name: regcred
   alerting:
     alertmanagers:
     - name: alertmanager-main
       namespace: monitoring
       port: web
-  image: quay.io/prometheus/prometheus:v2.15.2
+  baseImage: quay.io/prometheus/prometheus 
   nodeSelector:
     kubernetes.io/os: linux
   podMonitorNamespaceSelector: {}
@@ -31,4 +33,4 @@ spec:
   serviceAccountName: prometheus-k8s
   serviceMonitorNamespaceSelector: {}
   serviceMonitorSelector: {}
-  version: v2.15.2
+  version: v2.11.0

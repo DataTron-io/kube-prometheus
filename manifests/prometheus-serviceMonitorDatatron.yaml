@@ -1,14 +1,12 @@
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
-  labels:
-    k8s-app: alertmanager
-  name: alertmanager
+  name: datatron
   namespace: monitoring
 spec:
   endpoints:
-  - interval: 30s
-    port: web
+  - port: web
+  jobLabel: app
   selector:
     matchLabels:
-      alertmanager: main
+      services_type: infrastructure
